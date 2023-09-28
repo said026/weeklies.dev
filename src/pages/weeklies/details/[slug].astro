@@ -1,0 +1,114 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content"
+import CardGrid from "~/components/CardGrid.astro"
+import CardGridGroup from "~/components/CardGridGroup.astro"
+import ImageGallery from "~/components/ImageGallery.astro"
+import { resolveAllImages } from "~/content/weeklies/_resolveImage.js"
+import { getRelatedWeeklies } from "~/helpers/relatedWeeklies.js"
+import LeftArrowIcon from "~/icons/LeftArrowIcon.jsx"
+import MainLayout from "~/layouts/MainLayout.astro"
+import WeeklyCTAs from "../_components/WeeklyCTAs.astro"
+import WeeklyCard from "../_components/WeeklyCard.astro"
+import WeeklyStats from "../_components/WeeklyStats.astro"
+
+export async function getStaticPaths() {
+	const weeklies = await getCollection("weeklies")
+
+	return weeklies.map((weekly) => {
+		return {
+			params: { slug: weekly.slug },
+			props: { weekly },
+		}
+	})
+}
+
+const { weekly } = Astro.props as { weekly: CollectionEntry<"weeklies"> }
+
+const { Content } = await weekly.render()
+const relatedWeeklies = await getRelatedWeeklies(weekly)
+const images = await resolveAllImages(weekly)
+---
+
+<MainLayout
+	title={weekly.data.title}
+	description={weekly.data.description}
+	image={{ src: images[0].fullImage.src, alt: weekly.data.title }}
+>
+	<div class="grid-container gap-y-0">
+		{
+			images.length > 1 ? (
+				<ImageGallery
+					images={images}
+					class="bleed-full mx-auto w-full"
+					style="max-width: var(--container-width, 1280px)"
+				/>
+			) : (
+				<img
+					src={images[0].fullImage.src}
+					width={images[0].fullImage.width}
+					height={(images[0].fullImage.width * 7) / 16}
+					alt=""
+					class="mx-auto aspect-video w-full object-cover object-top"
+					decoding="async"
+				/>
+			)
+		}
+		<div class="flex flex-col border-astro-gray-500 md:flex-row xl:border-x">
+			<section class="flex w-full flex-col gap-6 py-6 md:gap-8 md:p-8 lg:gap-10 lg:px-20 lg:py-10">
+				<a
+					href="/weeklies/"
+					rel="prefetch"
+					class="flex items-center gap-2 self-start text-sm text-astro-gray-200"
+				>
+					<LeftArrowIcon aria-hidden="true" />
+					<span class="pr-2">Back to weeklies</span>
+				</a>
+				<div>
+					<h1 class="heading-3 mb-4 sm:heading-2">{weekly.data.title}</h1>
+					<p class="text-lg text-astro-gray-200 lg:text-xl">{weekly.data.description}</p>
+					<WeeklyCTAs weekly={weekly} class="py-6 md:hidden" />
+					<hr class="border-astro-gray-500 md:hidden" />
+					<WeeklyStats weekly={weekly} class="py-4 md:hidden" />
+				</div>
+				<hr class="hidden border-astro-gray-500 md:block" />
+				<article class="prose">
+					<Content />
+				</article>
+			</section>
+
+			<aside
+				class="hidden w-full divide-y divide-astro-gray-500 border-astro-gray-500 md:block md:max-w-md md:border-l"
+			>
+				<WeeklyCTAs weekly={weekly} class="p-6 lg:p-8 xl:p-10" />
+				<hr class="border-astro-gray-500" />
+				<WeeklyStats weekly={weekly} class="p-6 lg:p-8 xl:p-10" />
+			</aside>
+		</div>
+		<div class="related bleed-full relative border-t border-astro-gray-500">
+			<div class="grid-container gap-y-10 pb-0 pt-20">
+				<CardGridGroup
+					title="Other weeklies to consider"
+					cta={{ href: "/weeklies/", text: "View more weeklies" }}
+				>
+					<CardGrid class="md:grid-cols-2 lg:grid-cols-3">
+						{relatedWeeklies.map((weekly) => <WeeklyCard weekly={weekly} />)}
+					</CardGrid>
+				</CardGridGroup>
+			</div>
+		</div>
+	</div>
+
+	<style>
+		.grid-container :global(picture) {
+			@apply mx-auto w-full;
+			grid-column: 1 / -1;
+			max-width: var(--container-width, 1280px);
+		}
+
+		.related::before {
+			@apply bg-grid absolute aspect-square w-full;
+			content: "";
+			mask-image: linear-gradient(to bottom, white, transparent);
+		}
+	</style>
+</MainLayout>

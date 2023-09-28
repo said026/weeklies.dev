@@ -3,7 +3,7 @@ import fs from "node:fs"
 import path from "node:path"
 
 function migrateImage(src) {
-	return src.replace("./images", "/src/content/themes/_images").replace(path.extname(src), ".webp")
+	return src.replace("./images", "/src/content/weeklies/_images").replace(path.extname(src), ".webp")
 }
 
 function main() {
@@ -45,7 +45,7 @@ function main() {
 	})
 
 	for (const { slug, fullDescription, ...theme } of themes) {
-		const file = `../src/content/themes/${slug}.md`
+		const file = `../src/content/weeklies/${slug}.md`
 
 		const frontmatter = yaml.stringify(theme)
 

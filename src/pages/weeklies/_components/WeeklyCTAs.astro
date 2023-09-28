@@ -1,0 +1,34 @@
+---
+import type { HTMLAttributes } from "astro/types"
+import type { CollectionEntry } from "astro:content"
+import ExternalLinkIcon from "~/icons/ExternalLinkIcon.jsx"
+
+export type Props = HTMLAttributes<"div"> & {
+	weekly: CollectionEntry<"weeklies">
+}
+
+const { weekly, class: className, ...attrs } = Astro.props
+---
+
+<div class:list={["flex flex-col gap-4", className]} {...attrs}>
+	{
+		weekly.data.repoUrl && (
+			<a href={weekly.data.repoUrl} class="button button-primary" target="blank" data-analytics-event="PDDOCXCA:0">
+				<span>Subscribe</span>
+				<ExternalLinkIcon aria-hidden="true" />
+			</a>
+		)
+	}
+</div>
+
+<script>
+	document.querySelectorAll<HTMLElement>("[data-analytics-event]").forEach((elem) => {
+		if ("fathom" in window && elem.dataset.analyticsEvent) {
+			const [eventId, value = "0"] = elem.dataset.analyticsEvent.split(":")
+
+			elem.addEventListener("click", () => {
+				window.fathom.trackGoal(eventId, parseInt(value!))
+			})
+		}
+	})
+</script>

@@ -13,7 +13,7 @@ export const IntegrationCategories = new Map<string, string>([
 	["accessibility", "Accessibility"],
 ])
 
-export const ThemeCategories = new Map<string, string>([
+export const WeeklyCategories = new Map<string, string>([
 	["featured", "Featured"],
 	["recent", "Recently Added"],
 	["official", "Official"],
@@ -26,13 +26,16 @@ export const ThemeCategories = new Map<string, string>([
 	["other", "Other"],
 ])
 
-export const ThemeTools = new Map<string, string>([
+export const WeeklyTools = new Map<string, string>([
 	["alpinejs", "Alpine.js"],
+	["java", "Java"],
+	["springboot", "Spring boot"],
 	["lit", "Lit"],
 	["mdx", "MDX"],
 	["postcss", "PostCSS"],
 	["preact", "Preact"],
 	["react", "React"],
+	["rust", "Rust"],
 	["sass", "SASS"],
 	["solidjs", "SolidJS"],
 	["svelte", "Svelte"],
@@ -41,7 +44,7 @@ export const ThemeTools = new Map<string, string>([
 	["vue", "Vue"],
 ])
 
-export const themeSchema = z
+export const weeklySchema = z
 	.object({
 		title: z.string().min(1),
 		description: z.string().min(1),
@@ -53,7 +56,7 @@ export const themeSchema = z
 			name: z.string(),
 			avatar: z.string(),
 		}),
-		categories: z.array(z.enum(Array.from(ThemeCategories.keys()) as [string, ...string[]])),
+		categories: z.array(z.enum(Array.from(WeeklyCategories.keys()) as [string, ...string[]])),
 		repoUrl: z.string().url().optional(),
 		demoUrl: z.string().url().optional(),
 		buyUrl: z.string().url().optional(),
@@ -67,17 +70,17 @@ export const themeSchema = z
 			.default([]),
 		stars: z.number().min(0).default(0),
 		featured: z.number().min(1).optional(),
-		tools: z.array(z.enum(Array.from(ThemeTools.keys()) as [string, ...string[]])).default([]),
+		tools: z.array(z.enum(Array.from(WeeklyTools.keys()) as [string, ...string[]])).default([]),
 		related: z.array(z.string()).max(3).default([]),
 		publishDate: z.date({ coerce: true }).optional(),
 		badge: z.string().optional(),
 	})
-	.transform((theme) => {
+	.transform((weekly) => {
 		// computed properties
 		return {
-			...theme,
-			official: theme.categories.includes("official"),
-			paid: !!theme.buyUrl,
+			...weekly,
+			official: weekly.categories.includes("official"),
+			paid: !!weekly.buyUrl,
 		}
 	})
 
@@ -214,7 +217,7 @@ export const collections = {
 			highlight: z.boolean().default(false),
 		}),
 	},
-	themes: {
-		schema: themeSchema,
+	weeklies: {
+		schema: weeklySchema,
 	},
 }

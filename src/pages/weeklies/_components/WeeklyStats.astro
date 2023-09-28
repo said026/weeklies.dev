@@ -1,0 +1,29 @@
+---
+import type { HTMLAttributes } from "astro/types"
+import type { CollectionEntry } from "astro:content"
+import Avatar from "./Avatar.astro"
+import Badge from "./Badge.astro"
+
+export type Props = HTMLAttributes<"div"> & {
+	weekly: CollectionEntry<"weeklies">
+}
+
+const { weekly, class: className, ...attrs } = Astro.props
+
+---
+
+<div class:list={["flex flex-col gap-4", className]} {...attrs}>
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Tech</small>
+		<Badge weekly={weekly.data.paid ? "primary" : "secondary"}>
+			{weekly.data.tools[0]}
+		</Badge>
+	</div>
+	<hr class="border-astro-gray-500" />
+	<div class="flex items-center justify-between">
+		<small class="code text-astro-gray-200">Author</small>
+		<a href={weekly.data.author.url} target="_blank" class="link">
+			<Avatar weekly={weekly} />
+		</a>
+	</div>
+</div>

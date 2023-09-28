@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content"
+import Card from "~/components/Card.astro"
+import CardBadge from "~/components/CardBadge.astro"
+import CardBody from "~/components/CardBody.astro"
+import CardFooter from "~/components/CardFooter.astro"
+import { resolveImage } from "~/content/weeklies/_resolveImage.js"
+import Avatar from "./Avatar.astro"
+import Badge from "./Badge.astro"
+
+export type Props = {
+	weekly: CollectionEntry<"weeklies">
+}
+
+const { weekly } = Astro.props
+
+const image = await resolveImage(weekly)
+---
+
+<Card isLink>
+	{!!weekly.data.badge && <CardBadge>{weekly.data.badge}</CardBadge>}
+	<a class="flex h-full flex-col" href={`/weeklies/details/${weekly.slug}`} rel="prefetch">
+		<img
+			src={image.src}
+			width={image.width}
+			height={image.height}
+			alt=""
+			class="aspect-video w-full object-cover"
+			loading="lazy"
+			decoding="async"
+		/>
+		<CardBody>
+			<div>
+				<h3 class:list={["heading-5 mb-2 text-white", { official: weekly.data.official }]}>
+					{weekly.data.title}
+				</h3>
+				<p class="line-clamp-3">{weekly.data.description}</p>
+			</div>
+			<CardFooter
+				class="grid grid-cols-[1fr,auto] items-center justify-between gap-2 overflow-hidden border-t border-astro-gray-400 pt-6"
+			>
+				<Avatar weekly={weekly} />
+
+				<Badge weekly={weekly.data.paid ? "primary" : "secondary"} class="z-10">
+					{weekly.data.tools[0]}
+				</Badge>
+			</CardFooter>
+		</CardBody>
+	</a>
+</Card>
+
+<style>
+	.official::after {
+		@apply ml-1 inline-block h-5 w-5 translate-y-[2px] bg-contain bg-no-repeat;
+		content: "";
+		background-image: url(/assets/official.svg);
+	}
+</style>

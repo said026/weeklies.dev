@@ -103,10 +103,10 @@ async function withStarsAndUser(theme) {
 }
 
 async function main() {
-	// load all themes from src/content/themes
+	// load all themes from src/content/weeklies
 	const pathname = path.resolve(
 		path.dirname(fileURLToPath(import.meta.url)),
-		"../src/content/themes/*.md",
+		"../src/content/weeklies/*.md",
 	)
 	const entries = await glob(pathname)
 

@@ -53,7 +53,7 @@ function sendMessage(
 	method: "POST" | "PATCH" | "PUT",
 ): Promise<Response> {
 	const url = new URL(inputUrl)
-	if (threadId) url.searchParams.set("thread_id", threadId)
+	//if (threadId) url.searchParams.set("thread_id", threadId)
 
 	let body: string | FormData
 	const headers = new Headers()

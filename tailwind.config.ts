@@ -22,9 +22,9 @@ export default {
 			},
 			fontFamily: {
 				sans: ["Inter Variable", "sans-serif"],
-				mono: [`"MDIO"`, "md-io-fallback", "monospace"],
-				obviously: ["Obviously", "obviously-regular-fallback", "sans-serif"],
-				"obviously-wide": [`"Obviously Wide", "obviously-wide-fallback", "sans-serif"`],
+				mono: [`"IBMPlexMono"`, "ibm-plex-fallback", "monospace"],
+				raleway: ["Raleway", "raleway-regular-fallback", "sans-serif"],
+				"raleway-wide": [`"Raleway Wide", "raleway-wide-fallback", "sans-serif"`],
 			},
 			colors: {
 				black: "#0D0F14",
@@ -165,24 +165,24 @@ export default {
 				},
 
 				".heading-1": {
-					"@apply font-obviously text-7xl leading-tight": {},
+					"@apply font-raleway text-7xl leading-tight": {},
 				},
 
 				".heading-2": {
-					"@apply font-obviously text-6xl leading-tight": {},
+					"@apply font-raleway text-6xl leading-tight": {},
 				},
 
 				".heading-3": {
-					"@apply font-obviously text-4xl leading-tight": {},
+					"@apply font-raleway text-4xl leading-tight": {},
 					fontSize: "32px",
 				},
 
 				".heading-4": {
-					"@apply font-obviously text-2xl leading-tight": {},
+					"@apply font-raleway text-2xl leading-tight": {},
 				},
 
 				".heading-5": {
-					"@apply font-obviously text-xl leading-tight": {},
+					"@apply font-raleway text-xl leading-tight": {},
 				},
 
 				".body": {
