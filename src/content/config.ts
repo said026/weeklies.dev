@@ -174,28 +174,6 @@ export const collections = {
 	partials: {
 		schema: z.object({}),
 	},
-	quotes: {
-		schema: z.object({
-			author: z.object({
-				handle: z.string(),
-				avatar: z.object({
-					src: z.string(),
-					alt: z.string().optional(),
-				}),
-			}),
-			url: z.string().url(),
-			published: z.date(),
-		}),
-	},
-	showcase: {
-		schema: z.object({
-			title: z.string().min(1),
-			image: z.string(),
-			url: z.string().url(),
-			featured: z.number().min(1).optional(),
-			highlight: z.boolean().default(false),
-		}),
-	},
 	weeklies: {
 		schema: weeklySchema,
 	},

@@ -1,5 +1,4 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content"
 import CardGrid from "~/components//CardGrid.astro"
 import TwoUp from "~/components//TwoUp.astro"
 import Card from "~/components/Card.astro"
@@ -10,7 +9,6 @@ import PageSection from "~/components/PageSection.astro"
 import AstroLogomark from "~/icons/AstroLogomark.jsx"
 import EcosystemIllustration from "~/icons/EcosystemIllustration.jsx"
 import MainLayout from "~/layouts/MainLayout.astro"
-import QuoteCard from "../_components/QuoteCard.astro"
 import iconCode from "./_assets/icon-code.png"
 import iconFast from "./_assets/icon-fast.png"
 import iconWebsite from "./_assets/icon-website.png"
@@ -33,19 +31,6 @@ const beliefs = [
 		icon: iconWebsite.src,
 	},
 ]
-
-const allQuotes = await getCollection("quotes")
-
-const quoteSlugs = [
-	"adrianmg-no-brainer",
-	"theo-holy-shit",
-	"still_scripts-feel-like-thanos",
-	"thomasreggi-feels-like-php",
-]
-
-const quotes = await Promise.all(
-	quoteSlugs.map((slug) => allQuotes.find((entry) => entry.slug === slug)),
-).then((entries) => entries.filter(Boolean) as CollectionEntry<"quotes">[])
 ---
 
 <MainLayout
@@ -128,23 +113,6 @@ const quotes = await Promise.all(
 				</p>
 				<a href="/careers" rel="prefetch" class="button button-primary">Join us</a>
 			</div>
-			<div slot="end" class="quotes relative flex flex-col items-center lg:items-start">
-				{
-					quotes.map((quote, i) => (
-						<QuoteCard
-							quote={quote}
-							class={
-								[
-									"ml-16 -translate-y-4 scale-90",
-									"z-20 ml-6",
-									"z-10 ml-24 -translate-y-6 scale-90",
-									"-translate-y-12",
-								][i]
-							}
-						/>
-					))
-				}
-			</div>
 		</TwoUp>
 	</section>
 
@@ -194,20 +162,4 @@ const quotes = await Promise.all(
 		mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 70%);
 	}
 
-	@media screen(lg) {
-		.quotes::before {
-			height: 175%;
-			width: 160%;
-			left: -20%;
-			top: -50%;
-			background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-			mask-image: radial-gradient(rgba(0, 0, 0, 1), transparent 60%);
-		}
-
-		.company::before {
-			left: 0%;
-			width: 100%;
-			mask-image: radial-gradient(rgba(0, 0, 0, 0.7), transparent 60%);
-		}
-	}
 </style>
