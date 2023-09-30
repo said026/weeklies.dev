@@ -19,10 +19,10 @@ export type SiteInfo = {
 }
 
 const siteInfo: SiteInfo = {
-	name: "Astro",
-	title: "Build the web you want",
+	name: "weeklies.dev",
+	title: "Your go-to hub for developer weeklies",
 	description:
-		"Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between.",
+		"Dive into a curated collection of weeklies covering a wide spectrum of developer languages, frameworks, and technologies.",
 	image: {
 		src: "/og/social.jpg",
 		alt: "Build the web you want",
