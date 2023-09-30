@@ -12,7 +12,7 @@ function formatDate(date: Date) {
 }
 
 export const GET: APIRoute = async (context) => {
-	const unsortedPosts = [...(await getCollection("blog")), ...(await getCollection("caseStudies"))]
+	const unsortedPosts = [...(await getCollection("blog"))]
 	const posts = unsortedPosts.sort((a, b) => sortPosts(a, b))
 
 	return rss({

@@ -8,16 +8,12 @@
         {
             "rel": "http://webfinger.net/rel/profile-page",
             "type": "text/html",
-            "href": "https://m.webtoo.ls/@astro"
+            "href": "https://twitter.com/weekliesdev"
         },
         {
             "rel": "self",
             "type": "application/activity+json",
-            "href": "https://m.webtoo.ls/users/astro"
-        },
-        {
-            "rel": "http://ostatus.org/schema/1.0/subscribe",
-            "template": "https://m.webtoo.ls/authorize_interaction?uri={uri}"
+            "href": "https://twitter.com/weekliesdev"
         }
     ]
 }

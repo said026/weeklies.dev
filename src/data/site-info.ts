@@ -37,15 +37,15 @@ const siteInfo: SiteInfo = {
 		},
 		{
 			platform: "discord",
-			href: "/chat",
-			text: "Join the Astro community on Discord",
+			href: "https://discord.gg/U5BQ9mzh",
+			text: "Join the weeklies.dev community on Discord",
 			icon: "social/discord",
 		},
 		{
 			platform: "twitter",
-			href: "https://twitter.com/astrodotbuild",
-			me: "https://twitter.com/astrodotbuild",
-			text: "Follow Astro on Twitter",
+			href: "https://twitter.com/weekliesdev",
+			me: "https://twitter.com/weekliesdev",
+			text: "Follow weeklies.dev on Twitter",
 			icon: "social/twitter",
 		},
 		{
