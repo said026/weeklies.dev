@@ -41,5 +41,8 @@ export default defineConfig({
 	output: "hybrid",
 	adapter: vercel({
 		functionPerRoute: false,
+		webAnalytics: {
+			enabled: true,
+		},
 	}),
 })
