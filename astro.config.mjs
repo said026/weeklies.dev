@@ -38,7 +38,7 @@ export default defineConfig({
 			noExternal: ["smartypants"],
 		},
 	},
-	output: "hybrid",
+	output: "server",
 	adapter: vercel({
 		functionPerRoute: false,
 		webAnalytics: {
