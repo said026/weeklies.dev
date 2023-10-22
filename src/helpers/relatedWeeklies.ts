@@ -6,7 +6,7 @@ export async function getRelatedWeeklies(weekly: CollectionEntry<"weeklies">, co
 
 	const related: CollectionEntry<"weeklies">[] = []
 	const relatedSlugs = new Set<string>()
-	
+
 	// check the markdown first, we can hard-code related weeklies
 	for (const slug of weekly.data.related) {
 		const entry = otherWeeklies.find((w) => w.slug === slug)

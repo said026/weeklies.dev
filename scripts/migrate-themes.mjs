@@ -3,7 +3,9 @@ import fs from "node:fs"
 import path from "node:path"
 
 function migrateImage(src) {
-	return src.replace("./images", "/src/content/weeklies/_images").replace(path.extname(src), ".webp")
+	return src
+		.replace("./images", "/src/content/weeklies/_images")
+		.replace(path.extname(src), ".webp")
 }
 
 function main() {
