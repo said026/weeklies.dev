@@ -28,9 +28,11 @@ export const WeeklyCategories = new Map<string, string>([
 
 export const WeeklyTools = new Map<string, string>([
 	["alpinejs", "Alpine.js"],
+	["graphql", "GraphQL"],
 	["java", "Java"],
-	["springboot", "Spring boot"],
+	["javascript", "Javascript"],
 	["lit", "Lit"],
+	["llvm", "LLVM"],
 	["mdx", "MDX"],
 	["postcss", "PostCSS"],
 	["preact", "Preact"],
@@ -38,6 +40,7 @@ export const WeeklyTools = new Map<string, string>([
 	["rust", "Rust"],
 	["sass", "SASS"],
 	["solidjs", "SolidJS"],
+	["springboot", "Spring boot"],
 	["svelte", "Svelte"],
 	["tailwind", "Tailwind"],
 	["typescript", "TypeScript"],
