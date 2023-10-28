@@ -28,13 +28,13 @@ const siteInfo: SiteInfo = {
 		alt: "Build the web you want",
 	},
 	socialLinks: [
-		{
-			platform: "github",
-			href: "https://github.com/withastro/astro",
-			me: "https://github.com/withastro/",
-			text: "Go to Astro's GitHub repo",
-			icon: "social/github",
-		},
+		// {
+		// 	platform: "github",
+		// 	href: "https://github.com/withastro/astro",
+		// 	me: "https://github.com/withastro/",
+		// 	text: "Go to Astro's GitHub repo",
+		// 	icon: "social/github",
+		// },
 		{
 			platform: "discord",
 			href: "https://discord.gg/U5BQ9mzh",
