@@ -1,17 +1,17 @@
 ---
 title: "This Week in React"
-description: "The official Rust Lang weekly."
-image: "/src/content/weeklies/_images/this-week-in-react.webp"
+description: "The latest news directly in your inbox !"
+image: "/src/content/weeklies/_images/react-newsletter.webp"
 author:
-  url: "https://github.com/slorber"
-  name: "slorber"
-  avatar: "https://avatars.githubusercontent.com/u/749374?v=4"
+  url: "https://ui.dev"
+  name: "ui.dev"
+  avatar: "https://reactnewsletter.com/images/reactnewsletter-logo-center.svg"
 categories:
   - "landing-page"
   - "recent"
 tools:
   - "react"
-repoUrl: "https://thisweekinreact.com"
+repoUrl: "https://reactnewsletter.com"
 publishDate: "August 28, 2024"
 stars: 13
 badge: "new"

@@ -16,7 +16,6 @@ tools:
   - "javascript"
 stars: 5
 publishDate: "Sep 12, 2023"
-badge: "new"
 ---
 
 <p>

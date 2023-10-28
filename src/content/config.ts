@@ -28,12 +28,17 @@ export const WeeklyCategories = new Map<string, string>([
 
 export const WeeklyTools = new Map<string, string>([
 	["alpinejs", "Alpine.js"],
+	["data-science", "Data Science"],
+	["devops", "DevOps"],
+	["flutter", "Flutter"],
 	["graphql", "GraphQL"],
+	["golang", "Golang"],
 	["java", "Java"],
 	["javascript", "Javascript"],
 	["lit", "Lit"],
 	["llvm", "LLVM"],
 	["mdx", "MDX"],
+	["nodejs", "Node JS"],
 	["postcss", "PostCSS"],
 	["preact", "Preact"],
 	["react", "React"],
