@@ -19,7 +19,7 @@ export type SiteInfo = {
 }
 
 const siteInfo: SiteInfo = {
-	name: "weeklies.dev",
+	name: "weeklies.dev | your go-to hub for developer weeklies",
 	title: "Your go-to hub for developer weeklies",
 	description:
 		"Dive into a curated collection of weeklies covering a wide spectrum of developer languages, frameworks, and technologies.",
