@@ -39,6 +39,7 @@ export const WeeklyTools = new Map<string, string>([
 	["llvm", "LLVM"],
 	["mdx", "MDX"],
 	["nodejs", "Node JS"],
+	["other", "Other"],
 	["postcss", "PostCSS"],
 	["preact", "Preact"],
 	["react", "React"],
