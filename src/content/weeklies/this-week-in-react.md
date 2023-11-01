@@ -14,5 +14,4 @@ tools:
 repoUrl: "https://reactnewsletter.com"
 publishDate: "August 28, 2024"
 stars: 13
-badge: "new"
 ---
