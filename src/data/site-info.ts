@@ -37,7 +37,7 @@ const siteInfo: SiteInfo = {
 		// },
 		{
 			platform: "discord",
-			href: "https://discord.gg/U5BQ9mzh",
+			href: "https://discord.gg/4H3xycR",
 			text: "Join the weeklies.dev community on Discord",
 			icon: "social/discord",
 		},
