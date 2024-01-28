@@ -1,5 +1,5 @@
 ---
-import { Sprite } from "astro-icon"
+import { Icon } from "astro-icon/components"
 import clsx from "clsx"
 import Card from "~/components/Card.astro"
 import CardBody from "~/components/CardBody.astro"
@@ -68,7 +68,7 @@ const graphicCardHeadingClass = clsx("before:float-right before:h-1 before:w-32"
 										]}
 									>
 										<span class="sr-only">{alt}</span>
-										<Sprite name={icon} aria-hidden="true" class="h-[60%] w-[60%]" />
+										<Icon name={icon} aria-hidden="true" class="h-[60%] w-[60%]" />
 									</li>
 								))
 							}

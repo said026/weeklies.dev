@@ -1,11 +1,8 @@
 ---
-import { Sprite } from "astro-icon";
-import MainLayout from "~/layouts/MainLayout.astro";
-import Hero from "./_components/Hero.astro";
+import MainLayout from "~/layouts/MainLayout.astro"
+import Hero from "./_components/Hero.astro"
 ---
 
-<Sprite.Provider>
-	<MainLayout image={{ src: "/og/astro.jpg", alt: "Astro - Build the web you want." }}>
-		<Hero />
-	</MainLayout>
-</Sprite.Provider>
+<MainLayout image={{ src: "/og/astro.jpg", alt: "Astro - Build the web you want." }}>
+	<Hero />
+</MainLayout>

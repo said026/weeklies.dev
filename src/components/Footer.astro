@@ -1,5 +1,4 @@
 ---
-
 type Link = {
 	href: string
 	text: string
@@ -25,24 +24,23 @@ const groups: LinkGroup[] = [
 			{
 				href: "/blog/",
 				text: "Blog",
-			}
+			},
 		],
 	},
 	{
 		title: "Community",
 		items: [
 			{
-				href: "https://discord.gg/4H3xycR",
+				href: "https://discord.gg/5jZ6zEap",
 				text: "Contributing",
 			},
 			{
-				href: "https://discord.gg/4H3xycR",
+				href: "https://discord.gg/5jZ6zEap",
 				text: "Join our Discord",
 			},
 		],
-	}
+	},
 ]
-
 ---
 
 <footer class="container">
@@ -77,13 +75,16 @@ const groups: LinkGroup[] = [
 		class="grid grid-cols-[1fr,auto] items-center gap-x-4 gap-y-16 py-8 opacity-60 md:py-12"
 	>
 		<p>
-			 &copy; {new Date().getFullYear()}&nbsp;
-			<a href="/" class="link" target="_blank"
-				>weeklies.dev</a
-			>
+			&copy; {new Date().getFullYear()}&nbsp;
+			<a href="/" class="link" target="_blank">weeklies.dev</a>
 		</p>
 		<a href="https://astro.build">
-			<img src="https://astro.badg.es/v2/built-with-astro/tiny.svg" alt="Built with Astro" width="120" height="20">
+			<img
+				src="https://astro.badg.es/v2/built-with-astro/tiny.svg"
+				alt="Built with Astro"
+				width="120"
+				height="20"
+			/>
 		</a>
 	</nav>
 </footer>
