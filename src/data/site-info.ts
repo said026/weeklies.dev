@@ -37,7 +37,7 @@ const siteInfo: SiteInfo = {
 		// },
 		{
 			platform: "discord",
-			href: "https://discord.gg/4H3xycR",
+			href: "https://discord.gg/5jZ6zEap",
 			text: "Join the weeklies.dev community on Discord",
 			icon: "social/discord",
 		},
@@ -48,14 +48,14 @@ const siteInfo: SiteInfo = {
 			text: "Follow weeklies.dev on Twitter",
 			icon: "social/twitter",
 		},
-		{
-			platform: "mastodon",
-			href: "https://m.webtoo.ls/@astro",
-			me: "https://m.webtoo.ls/@astro",
-			text: "Follow Astro on Mastodon",
-			footerOnly: true,
-			icon: "social/mastodon",
-		},
+		// {
+		// 	platform: "mastodon",
+		// 	href: "https://m.webtoo.ls/@astro",
+		// 	me: "https://m.webtoo.ls/@astro",
+		// 	text: "Follow Astro on Mastodon",
+		// 	footerOnly: true,
+		// 	icon: "social/mastodon",
+		// },
 	],
 }
 

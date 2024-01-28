@@ -7,6 +7,7 @@ import sitemap from "@astrojs/sitemap"
 import solidJs from "@astrojs/solid-js"
 import tailwind from "@astrojs/tailwind"
 import vercel from "@astrojs/vercel/serverless"
+import icon from "astro-icon"
 
 /* https://vercel.com/docs/projects/environment-variables/system-environment-variables#system-environment-variables */
 const VERCEL_PREVIEW_SITE =
@@ -27,6 +28,7 @@ export default defineConfig({
 		mdx(),
 		sitemap(),
 		prefetch(),
+		icon(),
 	],
 	markdown: {
 		shikiConfig: {
