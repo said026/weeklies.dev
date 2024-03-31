@@ -167,7 +167,10 @@ if (prefilled != null) {
 }
 ---
 
-<MainLayout title="Submit a weekly" image={{ src: "/og/themes-submit.jpg", alt: "Submit a weekly" }}>
+<MainLayout
+	title="Submit a weekly"
+	image={{ src: "/og/themes-submit.jpg", alt: "Submit a weekly" }}
+>
 	<div class="flex items-start">
 		<div class="flex-1 border-astro-gray-600 p-8 lg:border-r">
 			<div class="mx-auto max-w-4xl">
@@ -198,7 +201,8 @@ if (prefilled != null) {
 				<form method="post" enctype="multipart/form-data" class="grid gap-10">
 					<FormFieldSet legend="Images">
 						<p>
-							Weekly images should be max 8MB combined, 16:9 aspect ratio, and 1280px wide or larger.
+							Weekly images should be max 8MB combined, 16:9 aspect ratio, and 1280px wide or
+							larger.
 						</p>
 						<FormErrorList
 							errors={[
@@ -260,7 +264,7 @@ if (prefilled != null) {
 
 						<script>
 							import { createEffect, createSignal } from "solid-js"
-import { getElement, getElements } from "~/helpers/dom.js"
+							import { getElement, getElements } from "~/helpers/dom.js"
 
 							const paidStatusOptions = getElements("[name=paidStatus]", HTMLInputElement)
 							const themeUrlLabel = getElement("[for=themeUrl]", HTMLLabelElement)

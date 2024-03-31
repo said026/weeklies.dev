@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content"
 
 export type Props = {
 	weekly: CollectionEntry<"weeklies">
@@ -10,7 +10,7 @@ const { weekly } = Astro.props
 
 <div class="flex items-center gap-2">
 	<img
-		class="h-6 w-6 rounded-full"
+		class="size-6 rounded-full"
 		src={weekly.data.author.avatar}
 		alt=""
 		width="48"

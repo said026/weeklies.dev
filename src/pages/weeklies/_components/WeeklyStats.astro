@@ -9,7 +9,6 @@ export type Props = HTMLAttributes<"div"> & {
 }
 
 const { weekly, class: className, ...attrs } = Astro.props
-
 ---
 
 <div class:list={["flex flex-col gap-4", className]} {...attrs}>

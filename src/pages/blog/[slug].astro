@@ -28,9 +28,9 @@ const { Content } = await render()
 const coverImage = await resolveCoverImage(post)
 const socialImage = await resolveSocialImage(post)
 
-const authors = await Promise.all(
-	data.authors.map((author) => getEntry("authors", author)),
-).then((authors) => authors.filter(Boolean) as CollectionEntry<"authors">[])
+const authors = await Promise.all(data.authors.map((author) => getEntry("authors", author))).then(
+	(authors) => authors.filter(Boolean) as CollectionEntry<"authors">[],
+)
 
 const gradients = [
 	"bg-red-pink-gradient",
@@ -64,7 +64,7 @@ const placeholderGradient = randomFromArray(gradients)
 		) : (
 			<div
 				class:list={[
-					"z-blur w-full h-64 -mb-56 md:h-64 md:-mb-52 lg:h-96 lg:-mb-80",
+					"z-blur -mb-56 h-64 w-full md:-mb-52 md:h-64 lg:-mb-80 lg:h-96",
 					placeholderGradient,
 				]}
 			/>

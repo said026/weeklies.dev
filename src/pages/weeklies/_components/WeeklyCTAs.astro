@@ -13,7 +13,12 @@ const { weekly, class: className, ...attrs } = Astro.props
 <div class:list={["flex flex-col gap-4", className]} {...attrs}>
 	{
 		weekly.data.repoUrl && (
-			<a href={weekly.data.repoUrl} class="button button-primary" target="blank" data-analytics-event="PDDOCXCA:0">
+			<a
+				href={weekly.data.repoUrl}
+				class="button button-primary"
+				target="blank"
+				data-analytics-event="PDDOCXCA:0"
+			>
 				<span>Subscribe</span>
 				<ExternalLinkIcon aria-hidden="true" />
 			</a>

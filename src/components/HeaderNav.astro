@@ -1,7 +1,7 @@
 ---
-import siteInfo from "~/data/site-info.js";
-import AstroLogo from "./AstroLogo.astro";
-import SocialLinks from "./SocialLinks.astro";
+import siteInfo from "~/data/site-info.js"
+import AstroLogo from "./AstroLogo.astro"
+import SocialLinks from "./SocialLinks.astro"
 
 const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly)
 ---
@@ -11,9 +11,9 @@ const socialLinks = siteInfo.socialLinks.filter((link) => !link.footerOnly)
 </a>
 
 <div class="ml-16 hidden shrink flex-row items-center gap-16 lg:flex">
-	<a href="/weeklies/" rel="prefetch"  class="link"> Weeklies</a>
+	<a href="/weeklies/" rel="prefetch" class="link"> Weeklies</a>
 	<a href="/blog/" rel="prefetch" class="link"> Blog</a>
-	<a href="/weeklies/submit/" rel="prefetch"  class="link"> Submit</a>
+	<a href="/weeklies/submit/" rel="prefetch" class="link"> Submit</a>
 </div>
 
 <div class="flex-1"></div>

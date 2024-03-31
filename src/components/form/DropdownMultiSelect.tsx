@@ -69,7 +69,7 @@ export function DropdownMultiSelect(props: {
 						)}
 					</For>
 				</div>
-				<ChevronIcon aria-hidden="true" class="h-4 w-4 transition group-open:rotate-180" />
+				<ChevronIcon aria-hidden="true" class="size-4 transition group-open:rotate-180" />
 			</summary>
 			<div class="grid max-h-60 gap-1 overflow-y-auto p-1">
 				<For each={props.options}>
@@ -102,7 +102,7 @@ export function DropdownMultiSelect(props: {
 							/>
 							<CheckCircleIcon
 								aria-hidden="true"
-								class="h-5 w-5 opacity-0 transition peer-checked:opacity-100"
+								class="size-5 opacity-0 transition peer-checked:opacity-100"
 							/>
 						</label>
 					)}

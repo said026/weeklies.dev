@@ -1,7 +1,7 @@
 ---
 import CatalogSubmitCallout, {
-type Props as CalloutProps,
-} from "~/components/CatalogSubmitCallout.astro";
+	type Props as CalloutProps,
+} from "~/components/CatalogSubmitCallout.astro"
 
 export type Props = Omit<CalloutProps, "slot" | "title" | "cta">
 
@@ -13,6 +13,6 @@ const { ...attrs } = Astro.props
 	cta={{ href: "/weeklies/submit", text: "Submit weekly" }}
 	{...attrs}
 >
-	Anyone can submit a weekly to weeklies.dev. If you have questions about building your own weekly, join our
-	community on <a class="link link-underline" href="/chat">Discord</a>!
+	Anyone can submit a weekly to weeklies.dev. If you have questions about building your own weekly,
+	join our community on <a class="link link-underline" href="/chat">Discord</a>!
 </CatalogSubmitCallout>
