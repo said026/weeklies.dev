@@ -23,7 +23,7 @@ const { images, class: className, ...attrs } = Astro.props
 	<div class="relative max-w-full">
 		<ul
 			id="gallery"
-			class="flex aspect-video h-full w-full flex-shrink-0 snap-x snap-mandatory scroll-p-0 overflow-y-hidden overflow-x-scroll"
+			class="flex aspect-video size-full flex-shrink-0 snap-x snap-mandatory scroll-p-0 overflow-y-hidden overflow-x-scroll"
 		>
 			{
 				images.map((image, i) => (
@@ -74,7 +74,7 @@ const { images, class: className, ...attrs } = Astro.props
 								width={image.thumbnail.width}
 								height={image.thumbnail.height}
 								alt={image.alt || ""}
-								class="aspect-video h-full w-full object-cover object-top"
+								class="aspect-video size-full object-cover object-top"
 								decoding="async"
 								loading="lazy"
 							/>
@@ -88,7 +88,7 @@ const { images, class: className, ...attrs } = Astro.props
 			{
 				images.map((_, i) => (
 					<div
-						class="pill h-2.5 w-2.5 rounded-full bg-astro-gray-100 transition-all duration-200 ease-in-out"
+						class="pill size-2.5 rounded-full bg-astro-gray-100 transition-all duration-200 ease-in-out"
 						aria-current={i === 0 ? "true" : "false"}
 					/>
 				))

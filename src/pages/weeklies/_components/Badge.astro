@@ -7,7 +7,7 @@ export type Props = {
 const { weekly, class: className } = Astro.props
 ---
 
-<p class:list={["relative code text-sm text-white px-2 py-1 rounded-md m-px", weekly, className]}>
+<p class:list={["code relative m-px rounded-md px-2 py-1 text-sm text-white", weekly, className]}>
 	<slot />
 </p>
 

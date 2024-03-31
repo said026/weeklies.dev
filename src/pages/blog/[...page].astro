@@ -28,9 +28,7 @@ const allPages = [...Array(page.lastPage).keys()].map((num) => {
 
 const allPosts = await getCollection("blog")
 
-const featuredPosts = [
-	"welcome"
-]
+const featuredPosts = ["welcome"]
 	.map((slug) => allPosts.find((post) => post.slug === slug))
 	.filter(Boolean) as CollectionEntry<"blog">[]
 ---
